@@ -1,0 +1,43 @@
+import React, { useState } from 'react';
+import axios from 'axios';
+import GetDataReport from './GetDataReport';
+import { useNavigate } from 'react-router-dom';
+
+function Report(props) {
+  const [userData, setUserData] = useState(null);;
+  const [loginError, setLoginError] = useState(null);
+
+  const navigate = useNavigate();
+
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post(
+        'http://mobileserver.atomexp.ru:8090/api/auth/login',
+        {
+          login: props.login,
+          password: props.password
+        }
+      );
+      setUserData(response.data);
+      setLoginError(null);
+      props.onSuccessfulLogin();
+      navigateToInfoCenter(response.data);
+    } catch (error) {
+      console.error('Error:', error);
+      setUserData(null);
+      setLoginError('Ошибка авторизации. Проверьте логин и пароль.');
+    }
+  };
+
+  const navigateToInfoCenter = (userData) => {
+    navigate('/InfoCenter', { state: { token: userData.token, userName: userData.user.NameActual } });
+  };
+
+  return (
+    <div>
+      <button onClick={handleLogin}>Залогиниться</button>
+      <p>{loginError}</p>
+    </div>
+  );
+}
+export default Report;
