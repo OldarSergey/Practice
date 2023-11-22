@@ -20,16 +20,17 @@ function InfoCenter(){
       };
 
     return(
-        <div>
-            <h1>{name}</h1>
-            <label>
-                Выберите дату:
+        <div className='ms-5'>
+            <h1 className='text-end me-5'>{name}</h1>
+            <div className='d-flex'>
+                <h3>Выберите дату:</h3>
             <input
+              className='ms-2'
               type="date"
               value={selectedDate}
               onChange={handleDateChange}
             />
-          </label>
+          </div>
             <GetDataReport token={token} datePeriod={selectedDate} />
         </div>
     )

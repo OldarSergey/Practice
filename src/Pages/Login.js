@@ -1,6 +1,8 @@
 import './Login.css'
 import { useState } from "react";
 import Report from '../components/Report';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
 
 function Login(props) {
     const initialValues = { username: "", password: "" };
@@ -54,47 +56,52 @@ function Login(props) {
     };
   
     return (
-      <div className="container">
+      <div style={{width:'100%'}}  className="container">
         <form onSubmit={handleSubmit}>
-          <h1>Вход</h1>
+          <h1 style={{textAlign:'center'}}>Вход</h1>
           <div className="ui divider"></div>
-          <div className="ui form">
+          <div  className="ui form">
             <div className="field">
-              <label>Имя пользователя :</label>
-              <input
-                type="text"
-                name="username"
-                placeholder="Username"
-                value={formValues.username}
-                onChange={handleChange}
+            <InputGroup style={{maxWidth:'400px'}} className="mb-3 w-75 mx-auto">
+            <InputGroup.Text>Login</InputGroup.Text>
+              <Form.Control
+               type="text"
+               name="username"
+               value={formValues.username}
+               onChange={handleChange}
               />
-            </div>
-            <p>{formErrors.username}</p>
-            <div className="field">
-              <label>Пароль: </label>
-              <input
-                type="password"
-                name="password"
-                placeholder="Password"
-                value={formValues.password}
-                onChange={handleChange}
+             </InputGroup>
+             <InputGroup  style={{maxWidth:'400px'}}  className=" w-75 mx-auto">
+             <InputGroup.Text>Password</InputGroup.Text>
+              <Form.Control
+               type="password"
+               name="password"
+               value={formValues.password}
+               onChange={handleChange}
               />
+             </InputGroup>
+             
+             
             </div>
             <p>{formErrors.password}</p>
           </div>
           <div className="field">
-          <label>
-            Запомнить пароль:
-            <input
-              type="checkbox"
-              name="rememberMe"
-              checked={rememberMe}
-              onChange={handleRememberMe}
+          <InputGroup style={{maxWidth:'400px'}}  className=" w-75 mx-auto ">
+            <InputGroup.Text>Запомнить пароль</InputGroup.Text> 
+            <InputGroup.Checkbox             
+            aria-label="" 
+            type="checkbox"
+            name="rememberMe"
+            checked={rememberMe}
+            onChange={handleRememberMe}
             />
-          </label>
+           </InputGroup>
+
+        
         </div>
+        
         </form>
-        <Report login={formValues.username} password={formValues.password} onSuccessfulLogin={props.onShowPage}></Report>
+        <Report className="mx-auto"  login={formValues.username} password={formValues.password} onSuccessfulLogin={props.onShowPage}></Report>
       </div>
     );
 }

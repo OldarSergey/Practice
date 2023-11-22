@@ -1,0 +1,16 @@
+
+
+@media (max-width: 768px) {
+    .ms-auto,
+    .me-auto {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  
+    .recharts-wrapper {
+      width: 100% !important;
+      overflow: auto;
+    }
+    
+
+  }

@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState} from 'react';
 import Table from "./Table";
 import Chart from "./Chart";
+import Button from 'react-bootstrap/Button';
 
 function GetDataReport(props){
     const [userData, setUserData] = useState(null);
@@ -31,11 +32,12 @@ function GetDataReport(props){
 
       return (
         <div>
-          <button onClick={handleGetData}>Получить данные</button>
+           <Button className='mt-4' onClick={handleGetData} variant="primary">Получить данные</Button>{' '}
+          
 
           {responseData && (
             <div>
-              <h2>Ответ сервера:</h2>
+              
                 <Table data = {responseData} ></Table>
                 <Chart data = {responseData} ></Chart>
             </div>

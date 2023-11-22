@@ -1,4 +1,3 @@
-
 import './App.css';
 import Login from './Pages/Login';
 import {Routes, Route} from 'react-router-dom'
@@ -7,6 +6,9 @@ import { Navbar, Nav } from 'react-bootstrap';
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import InfoCenter from './Pages/InfoCenter';
+import Image from 'react-bootstrap/Image';
+
+
 
 function App() {
   
@@ -22,24 +24,31 @@ function App() {
   };
 
   return (
-    <div>
-      <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="/">Ваш логотип</Navbar.Brand>
+    <div className='App' style={{ backgroundColor:'#7398b8', }} >
+      <Navbar expand="lg"  style={{borderBottom:'0.5px solid rgb(68,88,106)',backgroundColor:'#6484a0' }}>
+        <div style={{ marginLeft:'5%'}}>
+          <Image style={{width:'50px'}} src="https://www.atomexp.ru/source/pic/logo-white.svg" />
+        </div>
+       
+      
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           
-          <Nav>
+          <Nav id='infocenter'>
             {isLoggedIn && (
-                <Nav.Link as={Link} to="/InfoCenter">Информационный центр</Nav.Link>
+                <Nav.Link as={Link} to="/InfoCenter"><h5>Информационный центр</h5></Nav.Link>
             )}
           </Nav>
 
-          <Nav style={{position:'relative'}}>
+          <Nav className='ms-auto me-5'>
             {isLoggedIn ? (
-              <Nav.Link  onClick={handleLogout} style={{right:"0"}}  as={Link} to="/">Выйти</Nav.Link>
+              <Nav.Link  onClick={handleLogout}   as={Link} to="/"><h5>Выйти</h5></Nav.Link>
             ) : (
-              <Nav.Link as={Link} style={{right:"0"}} to="/" >Войти</Nav.Link>
+              <Nav.Link as={Link}  to="/" ><h5>Войти</h5></Nav.Link>
             )}
+          </Nav>
+          <Nav className='text-end'>
+              <h1>{}</h1>
           </Nav>
           
         </Navbar.Collapse>

@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import GetDataReport from './GetDataReport';
 import { useNavigate } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+
+
 
 function Report(props) {
   const [userData, setUserData] = useState(null);;
@@ -35,7 +38,8 @@ function Report(props) {
 
   return (
     <div>
-      <button onClick={handleLogin}>Залогиниться</button>
+      <Button className='mt-4 ' onClick={handleLogin} variant="primary">Авторизоваться</Button>{' '}
+      
       <p>{loginError}</p>
     </div>
   );
