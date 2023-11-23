@@ -24,12 +24,12 @@ function InfoCenter(){
             <h1 className='text-end me-5'>{name}</h1>
             <div className='d-flex'>
                 <h3>Выберите дату:</h3>
-            <input
-              className='ms-2'
-              type="date"
-              value={selectedDate}
-              onChange={handleDateChange}
-            />
+                <input
+                  className='ms-2'
+                  type="month"
+                  value={selectedDate}
+                  onChange={handleDateChange}
+                />
           </div>
             <GetDataReport token={token} datePeriod={selectedDate} />
         </div>

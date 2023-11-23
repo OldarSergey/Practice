@@ -7,17 +7,25 @@
     }
 }
 @media (max-width:612px){
-
+    .card-body{
+        overflow-x: auto;
+    }
 
     #col2{
         margin-top: 10%;
     }
 }
-  
-#questionbutton {
+.question-button{
+    width: 30px;
+    float: right;
+    border-radius:15px;
     margin-bottom: 10px;
 }
 
+.card-body{
+    margin: 2%;
+}
+
 h3{
-    font-size: 20px;
+    font-size: 26px;
 }

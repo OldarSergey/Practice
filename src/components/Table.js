@@ -8,9 +8,7 @@ import './Table.css'
 const Table = (props) => {
   return (
     <div>
-      <header style={{textAlign:'center'}}>
-        <h2 >Информационный центр</h2> 
-      </header>
+      
 
       <nav>  
         <div style={{margin:'5%'}} className='row'>
@@ -20,10 +18,10 @@ const Table = (props) => {
                 <Card.Body >
                   <Card.Title > <h3>С начала месяца ноября 2023 года</h3> </Card.Title> {/* */}
                   <Card style={{backgroundColor:'#EBEBEB'}}>
-                    <Card.Body className='border' style={{margin:'2%'}} > 
+                    <Card.Body className='card-body'  > 
                     <div>
                       <h3 className=''>Выполнение плана отгрузки</h3>     
-                      <Button id='questionbutton' style={{width: '30px', float:'right',borderRadius:'15px' }}  variant="primary" size="sm">
+                      <Button className='question-button'   variant="primary" size="sm">
                         ?
                       </Button>
                     </div>
@@ -49,11 +47,11 @@ const Table = (props) => {
                       
                     </Card.Body>
 
-                  <Card.Body className='border' style={{margin:'2%'}}  > 
+                  <Card.Body className='card-body'  > 
                     <h3>Выполнение плана оплаты</h3>       
-                      <Button id='questionbutton' style={{width: '30px', float:'right',borderRadius:'15px' }}  variant="primary" size="sm">
+                      <Button className='question-button' variant="primary" size="sm">
                         ?
-                      </Button>                                                       
+                      </Button>                                                        
                     <table className="table table-bordered">
                       <thead>
                         <tr>
@@ -76,9 +74,9 @@ const Table = (props) => {
                     </table>
                   </Card.Body>
 
-                  <Card.Body className='border' style={{margin:'2%'}} > 
+                  <Card.Body className='card-body'  > 
                   <h3>Выполнение плана выпуска готовой продукции</h3>    
-                   <Button id='questionbutton' style={{width: '30px', float:'right',borderRadius:'15px', }}  variant="primary" size="sm">
+                   <Button className='question-button'  variant="primary" size="sm">
                         ?
                     </Button>                                                          
                   <table className="table table-bordered">
@@ -114,10 +112,10 @@ const Table = (props) => {
                   <Card.Title> <h3>С начала 2023 года </h3> </Card.Title>
                   <Card style={{backgroundColor:'#EBEBEB'}}>
 
-                    <Card.Body className='border' style={{margin:'2%', }} > 
+                    <Card.Body className='card-body'> 
                     <h3>Факт отгрузки</h3> 
 
-                      <Button id='questionbutton' style={{width: '30px', float:'right',borderRadius:'15px' }}  variant="primary" size="sm">
+                      <Button className='question-button'  variant="primary" size="sm">
                         ?
                       </Button>                                                
                       <table className="table table-bordered" >
@@ -134,9 +132,9 @@ const Table = (props) => {
                       </table>
                     </Card.Body>
 
-                    <Card.Body className='border' style={{margin:'2%'}}  > 
+                    <Card.Body className='card-body'> 
                       <h3>Факт оплаты</h3>  
-                      <Button id='questionbutton' style={{width: '30px', float:'right',borderRadius:'15px' }}  variant="primary" size="sm">
+                      <Button className='question-button'  variant="primary" size="sm">
                         ?
                       </Button>                                                            
                       <table className="table table-bordered">
@@ -153,9 +151,9 @@ const Table = (props) => {
                         </table>
                     </Card.Body>
 
-                    <Card.Body className='border' style={{margin:'2%'}} > 
+                    <Card.Body className='card-body'> 
                     <h3>Факт реализации( из 1С)</h3>                                                              
-                    <Button id='questionbutton' style={{width: '30px', float:'right',borderRadius:'15px' }}  variant="primary" size="sm">
+                    <Button className='question-button'  variant="primary" size="sm">
                         ?
                     </Button>
                     <table className="table table-bordered">
