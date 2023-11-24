@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Table from "./Table";
 import Chart from "./Chart";
 import Button from 'react-bootstrap/Button';
+import { Row } from "react-bootstrap";
 
 function GetDataReport(props) {
   const [userData, setUserData] = useState(null);
@@ -43,10 +44,9 @@ function GetDataReport(props) {
       {errorMessage && <h3 style={{color:"white"}}>{errorMessage}</h3>}
 
       {responseData && (
-        <div>
+        <Row>
           <Table data={responseData}></Table>
-          <Chart data={responseData}></Chart>
-        </div>
+        </Row>
       )}
     </div>
   );

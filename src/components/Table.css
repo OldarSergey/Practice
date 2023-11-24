@@ -1,20 +1,17 @@
 
 
 
-@media (min-width:556px){
-    #col2{
-        margin-left: 5%;
+@media (max-width: 768px) {
+    .flex-graph {
+      flex-direction: column;
     }
-}
-@media (max-width:612px){
-    .card-body{
-        overflow-x: auto;
+  
+    .dashboard-table,
+    .flex-grow-1 {
+      width: 100%;
+      max-width: none;
     }
-
-    #col2{
-        margin-top: 10%;
-    }
-}
+  }
 .question-button{
     width: 30px;
     float: right;
@@ -25,6 +22,9 @@
 .card-body{
     margin: 2%;
 }
+.custom-bg-color {
+    background-color: #e3effa;
+  }
 
 h3{
     font-size: 26px;
