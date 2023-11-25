@@ -11,8 +11,8 @@ const BarCharts = (props) => {
   ];
 
   return (
-    <div style={{ width: '100%', height: 300 }}>
-      <ResponsiveContainer>
+    <div style={{ width: '90%', height: 300, minWidth:"250px"}}>
+      <ResponsiveContainer style={{backgroundColor:'#e3effa'}}>
         <BarChart
           width={500}
           height={300}
@@ -24,7 +24,7 @@ const BarCharts = (props) => {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar dataKey="План" fill="#8884d8" />
+          <Bar dataKey="План" fill="#735184" />
           <Bar dataKey="Факт" fill="#82ca9d" />
         </BarChart>
       </ResponsiveContainer>

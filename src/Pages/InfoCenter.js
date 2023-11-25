@@ -19,20 +19,23 @@ function InfoCenter(){
         setSelectedDate(event.target.value);
       };
 
-    return(
+      return (
         <div className='ms-5'>
-            <h1 className='text-end me-5'>{name}</h1>
-            <div className='d-flex'>
-                <h3>Выберите дату:</h3>
-                <input
-                  className='ms-2'
-                  type="month"
-                  value={selectedDate}
-                  onChange={handleDateChange}
-                />
+          <h1 className='text-end me-5'>{name}</h1>
+          <div className='d-flex'>
+            <h3>Выберите дату:</h3>
+            <input
+              className='ms-2'
+              type="month"
+              value={selectedDate}
+              onChange={handleDateChange}
+              style={{ background: 'transparent', fontSize: '18px' }} // Adjust font size as needed
+            />
           </div>
-            <GetDataReport token={token} datePeriod={selectedDate} />
+          <GetDataReport token={token} datePeriod={selectedDate} />
         </div>
-    )
+      );
+      
+      
 }
 export default InfoCenter;

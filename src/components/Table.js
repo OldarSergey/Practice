@@ -24,21 +24,27 @@ const Table = (props) => {
       return (
         <tr>
           <td>{title}</td>
-          <td className="text-right">{numberWithSpaces(data.plan)}</td>
-          <td className="text-right">{numberWithSpaces(data.fact)}</td>
-          <td className="text-center">{data.percent}</td>
+          <td className="text-right min-width">{numberWithSpaces(data.plan)}</td>
+          <td className="text-right min-width">{numberWithSpaces(data.fact)}</td>
+          <td className="text-center min-width">{data.percent}</td>
         </tr>
       );
     }
   };
 
   return (
-    <div className="d-flex flex-graph">
+    <>
+     <div className="d-flex flex-graph">
       <div className="dashboard-table flex-grow-1">
-        <Card.Body >
-          <Card style={{ backgroundColor: '#e3effa',maxWidth:'89%' }} className="mb-3">
+          <Card style={{ backgroundColor: '#e3effa', maxWidth: '89%', overflowX: 'auto' }} className="mb-3">
             <Card.Body>
-             <table className="table table-bordered table-sm custom-bg-color">
+              <table className="table table-bordered table-sm custom-bg-color">
+                <colgroup>
+                  <col className="col" />
+                  <col className="min-width" />
+                  <col className="min-width" />
+                  <col className="min-width" />
+                </colgroup>
                 <thead>
                   <tr>
                     <th scope="col"></th>
@@ -55,14 +61,9 @@ const Table = (props) => {
               </table>
             </Card.Body>
           </Card>
-        </Card.Body>
-      </div>
-      <div className="flex-grow-1" style={{ maxWidth: '50%', marginTop: '1.5%' }}>
-        <Chart data={props.data} />
-        <TotalPieCharts data={props.data} />
-        <BarCharts data={props.data}></BarCharts>
       </div>
     </div>
+  </>
   );
 };
 

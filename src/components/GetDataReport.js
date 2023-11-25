@@ -3,7 +3,9 @@ import React, { useState } from 'react';
 import Table from "./Table";
 import Chart from "./Chart";
 import Button from 'react-bootstrap/Button';
-import { Row } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
+import TotalPieCharts from "./TotalPieCharts";
+import BarCharts from "./BarCharts";
 
 function GetDataReport(props) {
   const [userData, setUserData] = useState(null);
@@ -44,9 +46,24 @@ function GetDataReport(props) {
       {errorMessage && <h3 style={{color:"white"}}>{errorMessage}</h3>}
 
       {responseData && (
-        <Row>
-          <Table data={responseData}></Table>
+        <Container fluid>
+        <Row className="my-4">
+          <Col>
+            <Table data={responseData} />
+          </Col>
+          <Col>
+            <Chart data={responseData} />
+          </Col>
         </Row>
+        <Row className="my-4">
+          <Col>
+            <BarCharts data={responseData} />
+          </Col>
+          <Col>
+            <TotalPieCharts data={responseData} />
+          </Col>
+        </Row>
+      </Container>
       )}
     </div>
   );

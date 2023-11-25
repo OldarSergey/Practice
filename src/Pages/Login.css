@@ -1,11 +1,5 @@
 body {
-    background: rgb(161, 158, 219);
-    background: radial-gradient(
-      circle,
-      rgb(88, 87, 106) 0%,
-      rgb(61, 59, 77)
-      rgb(53, 53, 76) 100%
-    );
+    background: #b7ccdc;
   }
   
   .container {
@@ -24,7 +18,7 @@ body {
     
     padding: 20px;
     border-radius: 5px;
-    background: #7398b8;
+    background: #b7ccdc;
   }
   pre {
     width: 70%;

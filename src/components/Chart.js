@@ -23,20 +23,21 @@ function Chart(props) {
   const chartData = transformDataForChart(props.data);
 
   return (
-    <div style={{marginLeft:'auto', marginRight:'auto',    height: '300px'}}>
-      <ResponsiveContainer style={{borderRadius:'15px', justifyContent: 'center', backgroundColor:'#e3effa', alignItems: 'center', marginLeft:'auto', marginRight:'auto'}}  id={ResponsiveContainer} width="80%" height="100%">
-        <LineChart data={chartData} margin={{ top: 20, right: 30, left: 20, bottom: 10 }}>
-          <Line type="monotone" dataKey="Shipment" stroke="#2196F3" strokeWidth={3}/>
-          <Line type="monotone" dataKey="Payment" stroke="#F44236" strokeWidth={3}/>
-          <Line type="monotone" dataKey="Release" stroke="#FFCA29" strokeWidth={3}/>
-          <CartesianGrid stroke="#ccc"/>
-          <XAxis dataKey="date"/>
-          <YAxis/>
-          <Tooltip/>
-          <Legend/>
-        </LineChart>
+    <>
+      <ResponsiveContainer style={{borderRadius:'15px', backgroundColor:'#e3effa', }}  id={ResponsiveContainer} width="80%" height="100%">
+          <LineChart data={chartData} margin={{ top: 20, right: 30, left: 20, bottom: 10 }}>
+            <Line type="monotone" dataKey="Shipment" stroke="#2196F3" strokeWidth={3}/>
+            <Line type="monotone" dataKey="Payment" stroke="#F44236" strokeWidth={3}/>
+            <Line type="monotone" dataKey="Release" stroke="#FFCA29" strokeWidth={3}/>
+            <CartesianGrid stroke="#ccc"/>
+            <XAxis dataKey="date"/>
+            <YAxis/>
+            <Tooltip/>
+            <Legend/>
+          </LineChart>
       </ResponsiveContainer>
-    </div>
+    </>
+
   );
 }
 export default Chart;
