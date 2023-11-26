@@ -34,9 +34,9 @@ const Table = (props) => {
 
   return (
     <>
-     <div className="d-flex flex-graph">
-      <div className="dashboard-table flex-grow-1">
-          <Card style={{ backgroundColor: '#e3effa', maxWidth: '89%', overflowX: 'auto' }} className="mb-3">
+     <div className="">
+      <div className="">
+          <Card style={{maxWidth: '900px'}}>
             <Card.Body>
               <table className="table table-bordered table-sm custom-bg-color">
                 <colgroup>

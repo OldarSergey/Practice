@@ -23,8 +23,8 @@ function Chart(props) {
   const chartData = transformDataForChart(props.data);
 
   return (
-    <>
-      <ResponsiveContainer style={{borderRadius:'15px', backgroundColor:'#e3effa', }}  id={ResponsiveContainer} width="80%" height="100%">
+    <div style={{ width: '90%', height: 300, minWidth:"250px"}}>
+      <ResponsiveContainer width="100%" height="100%" >
           <LineChart data={chartData} margin={{ top: 20, right: 30, left: 20, bottom: 10 }}>
             <Line type="monotone" dataKey="Shipment" stroke="#2196F3" strokeWidth={3}/>
             <Line type="monotone" dataKey="Payment" stroke="#F44236" strokeWidth={3}/>
@@ -36,7 +36,7 @@ function Chart(props) {
             <Legend/>
           </LineChart>
       </ResponsiveContainer>
-    </>
+    </div>
 
   );
 }

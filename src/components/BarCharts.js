@@ -12,7 +12,7 @@ const BarCharts = (props) => {
 
   return (
     <div style={{ width: '90%', height: 300, minWidth:"250px"}}>
-      <ResponsiveContainer style={{backgroundColor:'#e3effa'}}>
+      <ResponsiveContainer>
         <BarChart
           width={500}
           height={300}

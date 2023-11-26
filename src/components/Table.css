@@ -7,31 +7,74 @@
   white-space: nowrap;
 }
 
+.table-bordered th,
+.table-bordered td {
+  border: none; /* Убираем границы ячеек */
+}
+
+.table-bordered th:not(:first-child),
+.table-bordered td:not(:first-child) {
+  border-left: none; /* Убираем левые границы, кроме первой колонки */
+}
+
+.table-bordered th:last-child,
+.table-bordered td:last-child {
+  border-right: none; /* Убираем правые границы, кроме последней колонки */
+}
+
+.table-bordered th {
+  background-color: #f8f9fa; /* Цвет фона для заголовков */
+}
+
+/* Добавим отступы между ячейками */
+.table td,
+.table th {
+  padding: 0.5rem;
+}
+
+/* Уменьшим отступы внутри ячеек */
+.table td.text-right,
+.table th.text-right,
+.table td.text-center,
+.table th.text-center {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+/* При необходимости можно также убрать границы для таблицы в целом */
+/* .table-bordered {
+   border: none;
+} */
+
+
+/* Примерные стили для мобильных устройств */
 @media (max-width: 768px) {
-    .flex-graph {
-      flex-direction: column;
-    }
-  
-    .dashboard-table,
-    .flex-grow-1 {
-      width: 100%;
-      max-width: none;
-    }
-  }
-.question-button{
-    width: 30px;
-    float: right;
-    border-radius:15px;
-    margin-bottom: 10px;
-}
-
-.card-body{
-    margin: 2%;
-}
-.custom-bg-color {
-    background-color: #e3effa;
+  .custom-bg-color thead {
+    display: none;
   }
 
-h3{
-    font-size: 26px;
+  .custom-bg-color tr {
+    display: block;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+  }
+
+  .custom-bg-color td {
+    display: block;
+    text-align: right;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .custom-bg-color td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+  }
+  .custom-bg-color td::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    padding-right: 10px;
+  }
 }
+

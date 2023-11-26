@@ -1,11 +1,12 @@
 import axios from "axios";
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Table from "./Table";
 import Chart from "./Chart";
 import Button from 'react-bootstrap/Button';
-import { Container, Row, Col } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import TotalPieCharts from "./TotalPieCharts";
 import BarCharts from "./BarCharts";
+import { Container, Row, Col } from "react-bootstrap";
 
 function GetDataReport(props) {
   const [userData, setUserData] = useState(null);
@@ -28,6 +29,7 @@ function GetDataReport(props) {
 
       if (response.status === 200) {
         setResponseData(response.data);
+        setErrorMessage("");
       }
     } catch (error) {
       if (error.response && error.response.data && error.response.data.message) {
@@ -46,26 +48,41 @@ function GetDataReport(props) {
       {errorMessage && <h3 style={{color:"white"}}>{errorMessage}</h3>}
 
       {responseData && (
-        <Container fluid>
-        <Row className="my-4">
-          <Col>
-            <Table data={responseData} />
-          </Col>
-          <Col>
-            <Chart data={responseData} />
-          </Col>
-        </Row>
-        <Row className="my-4">
-          <Col>
-            <BarCharts data={responseData} />
-          </Col>
-          <Col>
-            <TotalPieCharts data={responseData} />
-          </Col>
-        </Row>
-      </Container>
+        <div className="dashboard-content">
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-lg-12">
+                <div className="mb-4 mt-4">
+                  <Table data={responseData} />
+                </div>
+              </div>
+              <div className="col-lg-4">
+                <div className="card mb-4 border-0">
+                  <div className="card-body p-3 rounded" style={{ boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)' }}>
+                    <Chart data={responseData} />
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-4">
+                <div className="card mb-4 border-0">
+                  <div className="card-body p-3 rounded" style={{ boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)' }}>
+                    <TotalPieCharts data={responseData} />
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-4">
+                <div className="card mb-4 border-0">
+                  <div className="card-body p-3 rounded" style={{ boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)' }}>
+                    <BarCharts data={responseData} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );
 }
+
 export default GetDataReport;

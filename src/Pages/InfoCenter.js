@@ -29,7 +29,14 @@ function InfoCenter(){
               type="month"
               value={selectedDate}
               onChange={handleDateChange}
-              style={{ background: 'transparent', fontSize: '18px' }} // Adjust font size as needed
+              style={{
+                background: 'transparent',
+                fontSize: '18px',
+                color: 'dark', // Цвет текста
+                border: '1px solid white', // Граница
+                borderRadius: '5px', // Округленные углы
+                padding: '5px', // Отступы
+              }}
             />
           </div>
           <GetDataReport token={token} datePeriod={selectedDate} />

@@ -56,7 +56,7 @@ const TotalPieCharts = (props) => {
 
   return (
     <div className="chart-container" style={{ margin: '0 auto', minWidth: '250px', maxWidth: '100%', overflowX: 'auto' }}>
-    <ResponsiveContainer width="100%" height={400} style={{overflowX: 'auto' }}>
+    <ResponsiveContainer width="100%" height={300} style={{overflowX: 'auto' }}>
         <PieChart style={{overflowX: 'auto' }}>
           <Pie
             data={data}
