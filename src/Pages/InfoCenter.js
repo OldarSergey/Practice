@@ -1,19 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import GetDataReport from "../components/GetDataReport";
 import { useLocation } from 'react-router-dom';
+import CardProfile from '../components/CardProfile';
 
 function InfoCenter(){
     const location = useLocation();
     const [token, setToken] = useState(null);
-    const [name, setName] = useState(null);
+    const [name, setName] = useState('');
+
     const [selectedDate, setSelectedDate] = useState('');
 
+  
     useEffect(() => {
-        if (location.state && location.state.token && location.state.userName) {
-          setToken(location.state.token);
-          setName(location.state.userName);
-        }
-      }, [location.state]);
+      if (location.state && location.state.token && location.state.userName) {
+        setToken(location.state.token);
+        setName(location.state.userName);
+
+        setSelectedDate(location.state.selectedDate || ''); 
+      }
+    }, [location.state]);
 
     const handleDateChange = (event) => {
         setSelectedDate(event.target.value);
@@ -32,12 +37,13 @@ function InfoCenter(){
               style={{
                 background: 'transparent',
                 fontSize: '18px',
-                color: 'dark', // Цвет текста
-                border: '1px solid white', // Граница
-                borderRadius: '5px', // Округленные углы
-                padding: '5px', // Отступы
+                color: 'dark',
+                border: '1px solid white', 
+                borderRadius: '5px', 
+                padding: '5px', 
               }}
             />
+            
           </div>
           <GetDataReport token={token} datePeriod={selectedDate} />
         </div>

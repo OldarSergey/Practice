@@ -33,7 +33,10 @@ function Report(props) {
   };
 
   const navigateToInfoCenter = (userData) => {
-    navigate('/InfoCenter', { state: { token: userData.token, userName: userData.user.NameActual } });
+    navigate('/InfoCenter', { state: { 
+      token: userData.token, 
+      userName: userData.user.NameActual,
+      } });
   };
 
   return (

@@ -45,33 +45,34 @@ function GetDataReport(props) {
     <div>
       <Button className='mt-4' onClick={handleGetData} variant="primary">Получить данные</Button>{' '}
 
-      {errorMessage && <h3 style={{color:"white"}}>{errorMessage}</h3>}
+      {errorMessage && <h3 style={{color:"black"}}>{errorMessage}!</h3>}
 
       {responseData && (
-        <div className="dashboard-content">
+        <div className="dashboard-content me-5">
           <div className="container-fluid">
             <div className="row">
-              <div className="col-lg-12">
-                <div className="mb-4 mt-4">
-                  <Table data={responseData} />
-                </div>
+            <div className="col-lg-12 d-flex justify-content-center">
+              <div className="mb-5 mt-4">
+                <Table data={responseData} />
               </div>
+            </div>
+
               <div className="col-lg-4">
-                <div className="card mb-4 border-0">
+                <div className="card mb-5 border-0" style={{ background: '#FFFAFA' }}>
                   <div className="card-body p-3 rounded" style={{ boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)' }}>
                     <Chart data={responseData} />
                   </div>
                 </div>
               </div>
               <div className="col-lg-4">
-                <div className="card mb-4 border-0">
+                <div className="card mb-4 border-0" style={{ background: '#FFFAFA' }}>
                   <div className="card-body p-3 rounded" style={{ boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)' }}>
                     <TotalPieCharts data={responseData} />
                   </div>
                 </div>
               </div>
               <div className="col-lg-4">
-                <div className="card mb-4 border-0">
+                <div className="card mb-4 border-0" style={{ background: '#FFFAFA' }}>
                   <div className="card-body p-3 rounded" style={{ boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)' }}>
                     <BarCharts data={responseData} />
                   </div>

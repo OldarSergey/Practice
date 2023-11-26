@@ -34,9 +34,9 @@ const Table = (props) => {
 
   return (
     <>
-     <div className="">
       <div className="">
-          <Card style={{maxWidth: '900px'}}>
+        <div className="">
+          <Card style={{ maxWidth: '900px', boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)', border: '1px solid #dee2e6', background: '#FFFAFA' }}>
             <Card.Body>
               <table className="table table-bordered table-sm custom-bg-color">
                 <colgroup>
@@ -61,9 +61,9 @@ const Table = (props) => {
               </table>
             </Card.Body>
           </Card>
+        </div>
       </div>
-    </div>
-  </>
+    </>
   );
 };
 

@@ -24,8 +24,8 @@ function App() {
   };
 
   return (
-    <div className='App' style={{ backgroundColor:'#b7ccdc', }} >
-      <Navbar expand="lg"  style={{borderBottom:'0.5px solid rgb(68,88,106)',backgroundColor:'#6484a0' }}>
+    <div className='App' style={{ backgroundColor:'#FFFFFF', }} >
+      <Navbar expand="lg"  style={{backgroundColor:'#e6e6e6' }}>
         <div style={{ marginLeft:'5%'}}>
           <Image style={{width:'50px'}} src="https://www.atomexp.ru/source/pic/logo-white.svg" />
         </div>
