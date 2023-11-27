@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import GetDataReport from "../components/GetDataReport";
 import { useLocation } from 'react-router-dom';
-import DatePicker from 'react-datepicker';
 import './InfoCenter.css'
 
 function InfoCenter(){
