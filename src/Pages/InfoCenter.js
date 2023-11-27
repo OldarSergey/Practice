@@ -25,9 +25,6 @@ function InfoCenter(){
         <div className='ms-5'>
           <h1 className='text-end me-5'>{name}</h1>
           <div className='d-flex'>
-            <h3>Выберите дату:</h3>
-            <h3>Выберитедату:</h3>
-            <h3>Выберите  дату:</h3>
             <h3>Дата:</h3>
             <input
               className='ms-2'

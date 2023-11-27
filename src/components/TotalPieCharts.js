@@ -6,9 +6,9 @@ const TotalPieCharts = (props) => {
   const { shipment, payment, release } = props.data.startYear.total;
 
   const data = [
-    { name: 'отгрузки', value: shipment },
-    { name: 'реализации', value: payment },
-    { name: 'реализации', value: release },
+    { name: 'Отгрузка', value: shipment },
+    { name: 'Оплата  ', value: payment },
+    { name: 'Выпуск', value: release },
   ];
 
   const COLORS = ['#3F888F', '#543964', '#8e9bc8'];

@@ -10,9 +10,9 @@ function Chart(props) {
     
     const chartData = monthlyData.map((month) => ({
         date: month.date,
-        Отгрузки: month.shipment,
-        Оплаты: month.payment,
-        Реализации: month.release,
+        Отгрузка: month.shipment,
+        Оплата: month.payment,
+        Выпуск: month.release,
         PaymentFact: data.current.payment.fact, 
         ShipmentFact: data.current.shipment.fact, 
         ReleaseFact: data.current.release.fact, 
@@ -26,9 +26,9 @@ function Chart(props) {
     <div style={{ width: '90%', height: 300, minWidth:"auto"}}>
       <ResponsiveContainer width="100%" height="100%" >
           <LineChart data={chartData} margin={{ top: 20, right: 30, left: 20, bottom: 10 }}>
-            <Line type="monotone" dataKey="Отгрузки" stroke="#2196F3" strokeWidth={3}/>
-            <Line type="monotone" dataKey="Оплаты" stroke="#F44236" strokeWidth={3}/>
-            <Line type="monotone" dataKey="Реализации" stroke="#FFCA29" strokeWidth={3}/>
+            <Line type="monotone" dataKey="Отгрузка" stroke="#2196F3" strokeWidth={3}/>
+            <Line type="monotone" dataKey="Оплата" stroke="#F44236" strokeWidth={3}/>
+            <Line type="monotone" dataKey="Выпуск" stroke="#FFCA29" strokeWidth={3}/>
             <CartesianGrid stroke="#ccc"/>
             <XAxis dataKey="date"/>
             <YAxis/>

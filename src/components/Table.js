@@ -52,7 +52,7 @@ const Table = (props) => {
                 <tbody>
                   {renderDataRow('Выполнение плана отгрузки', props.data.current.shipment)}
                   {renderDataRow('Выполнение плана оплаты', props.data.current.payment)}
-                  {renderDataRow('Выполнение плана выпуска готовой продукции', props.data.current.release)}
+                  {renderDataRow('Выполнение плана выпуска продукции', props.data.current.release)}
                 </tbody>
               </table>
             </Card.Body>
