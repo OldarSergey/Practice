@@ -7,7 +7,7 @@ const TotalPieCharts = (props) => {
 
   const data = [
     { name: 'отгрузки', value: shipment },
-    { name: 'оплаты', value: payment },
+    { name: 'реализации', value: payment },
     { name: 'реализации', value: release },
   ];
 
