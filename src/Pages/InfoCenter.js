@@ -34,8 +34,8 @@ function InfoCenter(){
               style={{
                 background: 'transparent',
                 fontSize: '18px',
-                color: 'dark',
-                border: '1px solid white', 
+                color: 'black',
+                border: '1px solid black', 
                 borderRadius: '5px', 
                 padding: '5px', 
               }}
