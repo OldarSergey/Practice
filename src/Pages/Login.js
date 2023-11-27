@@ -63,7 +63,7 @@ function Login(props) {
           <div  className="ui form">
             <div className="field">
             <InputGroup style={{maxWidth:'400px'}} className="mb-3 w-75 mx-auto">
-            <InputGroup.Text>Login</InputGroup.Text>
+            <InputGroup.Text>Логин</InputGroup.Text>
               <Form.Control
                type="text"
                name="username"
@@ -72,7 +72,7 @@ function Login(props) {
               />
              </InputGroup>
              <InputGroup  style={{maxWidth:'400px'}}  className=" w-75 mx-auto">
-             <InputGroup.Text>Password</InputGroup.Text>
+             <InputGroup.Text>Пароль</InputGroup.Text>
               <Form.Control
                type="password"
                name="password"
