@@ -1,8 +1,8 @@
 @media (max-width: 768px) {
     input[type="month"] {
-        color: white; /* Задайте желаемый цвет текста */
-        background-color: #333; /* Задайте фоновый цвет инпута */
-        border: 1px solid white; /* Задайте стиль рамки */
+        color: rgb(6, 6, 6); /* Задайте желаемый цвет текста */
+        background-color: #080808; /* Задайте фоновый цвет инпута */
+        border: 1px solid rgb(10, 10, 10); /* Задайте стиль рамки */
         border-radius: 5px; /* Задайте скругление углов */
         padding: 5px; /* Задайте внутренний отступ */
         -webkit-appearance: none; /* Уберите стандартные стили Safari */
