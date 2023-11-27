@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import GetDataReport from "../components/GetDataReport";
 import { useLocation } from 'react-router-dom';
+import DatePicker from 'react-datepicker';
 import './InfoCenter.css'
 
 function InfoCenter(){
     const location = useLocation();
     const [token, setToken] = useState(null);
     const [name, setName] = useState('');
-    const [selectedDate, setSelectedDate] = useState('');
+    const [selectedDate, setSelectedDate] = useState(null);
   
     useEffect(() => {
       if (location.state && location.state.token && location.state.userName) {
@@ -32,7 +33,6 @@ function InfoCenter(){
               value={selectedDate}
               onChange={handleDateChange}
               style={{
-                background: 'transparent',
                 fontSize: '18px',
                 color: 'black',
                 border: '1px solid black', 
