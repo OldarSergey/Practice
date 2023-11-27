@@ -48,6 +48,43 @@
     display: none;
   }
 
+  .custom-bg-color tr:first-child td:nth-child(2)::before {
+    content: "план";
+  }
+  
+  .custom-bg-color tr:first-child td:nth-child(3)::before {
+    content: "факт";
+  }
+  
+  .custom-bg-color tr:first-child td:nth-child(4)::before {
+    content: "процент";
+  }
+
+  .custom-bg-color tr:nth-child(2) td:nth-child(2)::before {
+    content: "план";
+  }
+  
+  .custom-bg-color tr:nth-child(2) td:nth-child(3)::before {
+    content: "факт";
+  }
+  
+  .custom-bg-color tr:nth-child(2) td:nth-child(4)::before {
+    content: "процент";
+  }
+
+  .custom-bg-color tr:nth-child(3) td:nth-child(2)::before {
+    content: "план";
+  }
+  
+  .custom-bg-color tr:nth-child(3) td:nth-child(3)::before {
+    content: "факт";
+  }
+  
+  .custom-bg-color tr:nth-child(3) td:nth-child(4)::before {
+    content: "процент";
+  }
+
+
   .custom-bg-color tr {
     display: block;
     margin-bottom: 20px;
@@ -58,18 +95,13 @@
     display: block;
     text-align: right;
     border-bottom: 1px solid #ccc;
+    padding-left: 10px; /* Добавляем отступ слева для текста */
   }
 
   .custom-bg-color td::before {
     content: attr(data-label);
     float: left;
     font-weight: bold;
-  }
-  .custom-bg-color td::before {
-    content: attr(data-label);
-    float: left;
-    font-weight: bold;
-    padding-right: 10px;
   }
 }
 
