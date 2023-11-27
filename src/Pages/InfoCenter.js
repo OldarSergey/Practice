@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import GetDataReport from "../components/GetDataReport";
 import { useLocation } from 'react-router-dom';
+import './InfoCenter.css'
 
 function InfoCenter(){
     const location = useLocation();
@@ -30,14 +31,6 @@ function InfoCenter(){
               type="month"
               value={selectedDate}
               onChange={handleDateChange}
-              style={{
-                background: 'transparent',
-                fontSize: '18px',
-                color: 'dark',
-                border: '1px solid black', 
-                borderRadius: '5px', 
-                padding: '5px', 
-              }}
             />
           </div>
           <GetDataReport token={token} datePeriod={selectedDate} />
