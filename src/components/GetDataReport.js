@@ -43,7 +43,7 @@ function GetDataReport(props) {
 
   return (
     <div>
-      <Button className='mt-4' onClick={handleGetData} variant="primary">Получить данные</Button>{' '}
+      <Button className='mt-4' onClick={handleGetData} style={{backgroundColor:'#4D92E2' }} >Получить данные</Button>{' '}
 
       {errorMessage && <h3 style={{color:"black"}}>{errorMessage}!</h3>}
 

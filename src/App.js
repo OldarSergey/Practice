@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div className='App' style={{ backgroundColor:'#FFFFFF', }} >
-      <Navbar expand="lg"  style={{backgroundColor:'#e6e6e6' }}>
+      <Navbar expand="lg"  style={{backgroundColor:'#0563B4' }}>
         <div style={{ marginLeft:'5%'}}>
           <Image style={{width:'50px'}} src="https://www.atomexp.ru/source/pic/logo-white.svg" />
         </div>
@@ -36,15 +36,15 @@ function App() {
           
           <Nav id='infocenter'>
             {isLoggedIn && (
-                <Nav.Link as={Link} to="/InfoCenter"><h5>Информационный центр</h5></Nav.Link>
+                <Nav.Link as={Link} to="/InfoCenter"><h4>Информационный центр</h4></Nav.Link>
             )}
           </Nav>
 
           <Nav className='ms-auto me-5'>
             {isLoggedIn ? (
-              <Nav.Link  onClick={handleLogout}   as={Link} to="/"><h5>Выйти</h5></Nav.Link>
+              <Nav.Link  onClick={handleLogout}   as={Link} to="/"><h4>Выйти</h4></Nav.Link>
             ) : (
-              <Nav.Link as={Link}  to="/" ><h5>Выйти</h5></Nav.Link>
+              <Nav.Link as={Link}  to="/" ><h4>Выйти</h4></Nav.Link>
             )}
           </Nav>
           <Nav className='text-end'>
