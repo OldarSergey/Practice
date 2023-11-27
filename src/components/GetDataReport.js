@@ -58,7 +58,7 @@ function GetDataReport(props) {
             </div>
 
               <div className="col-lg-4">
-                <div className="card mb-5 border-0" style={{ background: '#FFFAFA' }}>
+                <div className="card mb-5 border-0" style={{ background: '#FFFAFA'}}>
                   <div className="card-body p-3 rounded" style={{ boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.1)' }}>
                     <Chart data={responseData} />
                   </div>

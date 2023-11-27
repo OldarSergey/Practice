@@ -1,11 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import './Table.css';
-import Chart from './Chart';
-import TotalPieCharts from './TotalPieCharts';
-import BarCharts from './BarCharts';
 
 const numberWithSpaces = (number) => {
   return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
