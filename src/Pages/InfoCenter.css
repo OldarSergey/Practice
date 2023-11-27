@@ -1,6 +1,0 @@
-input[type="date"]::-webkit-calendar-picker-indicator {
-    filter: invert(1); /* Инвертирует цвета */
-    background-color: #333; /* Задает темный фон */
-    color: #fff; /* Задает цвет текста */
-  }
-  
