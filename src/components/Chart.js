@@ -23,7 +23,7 @@ function Chart(props) {
   const chartData = transformDataForChart(props.data);
 
   return (
-    <div style={{ width: '90%', height: 300, minWidth:"250px"}}>
+    <div style={{ width: '90%', height: 300, minWidth:"auto"}}>
       <ResponsiveContainer width="100%" height="100%" >
           <LineChart data={chartData} margin={{ top: 20, right: 30, left: 20, bottom: 10 }}>
             <Line type="monotone" dataKey="Shipment" stroke="#2196F3" strokeWidth={3}/>

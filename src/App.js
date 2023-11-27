@@ -44,7 +44,7 @@ function App() {
             {isLoggedIn ? (
               <Nav.Link  onClick={handleLogout}   as={Link} to="/"><h5>Выйти</h5></Nav.Link>
             ) : (
-              <Nav.Link as={Link}  to="/" ><h5></h5></Nav.Link>
+              <Nav.Link as={Link}  to="/" ><h5>Войти</h5></Nav.Link>
             )}
           </Nav>
           <Nav className='text-end'>

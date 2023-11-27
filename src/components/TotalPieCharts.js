@@ -30,32 +30,32 @@ const TotalPieCharts = (props) => {
     return null;
   };
 
-  const [outerRadius, setOuterRadius] = useState(80); // Изначальный outerRadius
+  const [outerRadius, setOuterRadius] = useState(80);
 
   const handleResize = () => {
-    // Здесь можно добавить логику для изменения outerRadius в зависимости от размеров окна
+    
     const windowWidth = window.innerWidth;
 
     if (windowWidth < 768) {
-      setOuterRadius(50); // Новое значение outerRadius для мобильных устройств
+      setOuterRadius(50); 
     } else {
-      setOuterRadius(80); // Возвращаем исходное значение outerRadius для других размеров экрана
+      setOuterRadius(80);
     }
   };
 
   useEffect(() => {
-    handleResize(); // Вызов функции при монтировании компонента
+    handleResize(); 
 
-    window.addEventListener('resize', handleResize); // Слушатель изменения размера окна
+    window.addEventListener('resize', handleResize); 
 
     return () => {
-      window.removeEventListener('resize', handleResize); // Отписываемся от слушателя при размонтировании компонента
+      window.removeEventListener('resize', handleResize); 
     };
   }, []);
 
 
   return (
-    <div className="chart-container" style={{ margin: '0 auto', minWidth: '250px', maxWidth: '100%', overflowX: 'auto' }}>
+    <div className="chart-container" style={{ margin: '0 auto', minWidth:"auto", maxWidth: '100%', overflowX: 'auto' }}>
     <ResponsiveContainer width="100%" height={300} style={{overflowX: 'auto' }}>
         <PieChart style={{overflowX: 'auto' }}>
           <Pie

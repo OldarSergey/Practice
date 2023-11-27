@@ -11,7 +11,7 @@ const BarCharts = (props) => {
   ];
 
   return (
-    <div style={{ width: '90%', height: 300, minWidth:"250px"}}>
+    <div style={{ width: '90%', height: 300, minWidth:"auto"}}>
       <ResponsiveContainer>
         <BarChart
           width={500}

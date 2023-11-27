@@ -32,6 +32,7 @@ function InfoCenter(){
               value={selectedDate}
               onChange={handleDateChange}
               style={{
+                background: 'transparent',
                 fontSize: '18px',
                 color: 'black',
                 border: '1px solid black', 
