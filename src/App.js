@@ -1,7 +1,7 @@
 import './App.css';
 import Login from './Pages/Login';
 import {Routes, Route} from 'react-router-dom'
-import { Link, Outlet } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { Navbar, Nav } from 'react-bootstrap';
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';

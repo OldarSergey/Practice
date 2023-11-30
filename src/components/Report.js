@@ -1,6 +1,5 @@
 import{ useState, useEffect } from 'react';
 import axios from 'axios';
-import GetDataReport from './GetDataReport';
 import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 
@@ -12,6 +11,7 @@ function Report(props) {
 
   const navigate = useNavigate();
 
+  
   const handleLogin = async () => {
     try {
       const response = await axios.post(

@@ -6,11 +6,12 @@ import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import TotalPieCharts from "./TotalPieCharts";
 import BarCharts from "./BarCharts";
-import { Container, Row, Col } from "react-bootstrap";
 
 function GetDataReport(props) {
   const [userData, setUserData] = useState(null);
+
   const [responseData, setResponseData] = useState(null);
+
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleGetData = async () => {

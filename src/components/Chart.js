@@ -1,5 +1,4 @@
 import { CartesianGrid, Legend, Line, LineChart, XAxis,Tooltip, YAxis, ResponsiveContainer  } from 'recharts';
-import './Chart.css'
 function Chart(props) {
   const transformDataForChart = (data) => {
     if (!data || !data.startYear || !data.startYear.monthly) {
