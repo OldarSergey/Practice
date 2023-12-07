@@ -9,6 +9,11 @@ import InfoCenter from './Pages/InfoCenter';
 import Image from 'react-bootstrap/Image';
 import MainPageMenu from './Pages/MainPageMenu';
 import AboutCompany from './Pages/AboutСompany';
+import Canteen from './Pages/Canteen';
+import News from './Pages/News';
+import Surveys from './Pages/Surveys';
+import KnowledgeBase from './Pages/KnowledgeBase';
+import Notifications from './Pages/Notifications';
 
 
 
@@ -38,6 +43,11 @@ function App() {
         <Route path='/InfoCenter' element={<InfoCenter />} />
         <Route path='/MainPageMenu' element={<MainPageMenu />} />
         <Route path='/AboutСompany' element={<AboutCompany></AboutCompany>} />
+        <Route path='/Canteen'      element={<Canteen></Canteen>}/>
+        <Route path='/News'         element={<News></News>} />
+        <Route path='/Surveys'      element={<Surveys></Surveys>} />
+        <Route path='/KnowledgeBase' element={<KnowledgeBase></KnowledgeBase>} />
+        <Route path='/Notification' element={<Notifications></Notifications>} />
       </Routes>
     </div>
   );

@@ -45,11 +45,11 @@ function MainPageMenu() {
             <div className="section">
                 <div className={`menu-block ${menuActive ? 'menu-nav_active' : ''}`}>
                     <nav className={`menu-nav ${menuActive ? 'menu-nav_active' : ''}`}>
-                    <a href="#">Столовая</a>
-                    <a href="#">Новости</a>
-                    <a href="#">Опросы</a>
-                    <a href="#">Уведомления</a>
-                    <a href="#">База знаний</a>  
+                     <Link to={"/Canteen"}>Столовая</Link>
+                     <Link to={"/News"}>Новости</Link>
+                     <Link to={"/Surveys"}>Опросы</Link>
+                     <Link to={"/Notification"}>Уведомления</Link>
+                    <Link to={"/KnowledgeBase"}>База знаний</Link>  
                     {role == "DIRECTOR_VIEW" && (
                         <a href='#' onClick={handleInfoCenter}>Инфоцентр</a>
                     )}
