@@ -1,0 +1,185 @@
+@media only screen and (max-width: 768px) {
+
+    .section {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: flex-end; /* Расположение вправо */
+      align-items: flex-start; /* Расположение вверху */
+      padding: 30px; /* Добавление отступов по периметру */
+    }
+    .menu-btn {
+      display: block;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      position: relative;
+    }
+    .menu-btn span,
+    .menu-btn span::before,
+    .menu-btn span::after {
+      position: absolute;
+      top: 50%; margin-top: -1px;
+      left: 50%; margin-left: -10px;
+      width: 20px;
+      height: 2px;
+      
+      background-color: #222;
+    }
+    .menu-btn span::before,
+    .menu-btn span::after {
+      content: '';
+      display: block;
+      transition: 0.2s;
+      
+    }
+    .menu-btn span::before {
+      transform: translateY(-5px);
+      
+    }
+    .menu-btn span::after {
+      transform: translateY(5px);
+    }
+    
+    .menu-btn_active span:before {
+      transform: rotate(-35deg);
+      width: 10px;
+      transform-origin: left bottom;
+      
+    }
+    .menu-btn_active span:after {
+      transform: rotate(35deg);
+      width: 10px;
+      transform-origin: left top;
+      
+    }
+    .menu-block {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+    .menu-nav a {
+      text-decoration: none;
+      color: #f3efef;
+      text-transform: uppercase;
+      font-weight: 100;
+      display: block; /* Изменено с inline-block на block */
+      margin-bottom: 20px; /* Отступ между пунктами меню */
+      
+      transition: 1s;
+    }
+    .menu-nav {
+        transition: 0.2s;
+        transform: scaleY(0) translateY(0);
+        transform-origin: right top;
+        opacity: 0;
+        visibility: hidden;
+        width: 200px;
+        padding: 5px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        background-color: rgb(60, 121, 174);
+        position: absolute;
+        top: 100%;
+        right: 0;
+      }
+    
+    .menu-btn_active + .menu-nav {
+        transform: scaleY(1) translateY(-10px); /* Отображение меню */
+        opacity: 1;
+        visibility: visible;
+      }
+  }
+  
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+  }
+  .section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end; /* Расположение вправо */
+    align-items: flex-start; /* Расположение вверху */
+    padding: 30px; /* Добавление отступов по периметру */
+  }
+  .menu-btn {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #0563B4;
+    border-radius: 50%;
+    
+    position: relative;
+  }
+  .menu-btn span,
+  .menu-btn span::before,
+  .menu-btn span::after {
+    position: absolute;
+    top: 50%; margin-top: -1px;
+    left: 50%; margin-left: -10px;
+    width: 20px;
+    height: 2px;
+    background-color: #222;
+  }
+  .menu-btn span::before,
+  .menu-btn span::after {
+    content: '';
+    display: block;
+    transition: 0.2s;
+  }
+  .menu-btn span::before {
+    transform: translateY(-5px);
+  }
+  .menu-btn span::after {
+    transform: translateY(5px);
+  }
+  
+  .menu-btn_active span:before {
+    transform: rotate(-35deg);
+    width: 10px;
+    transform-origin: left bottom;
+  }
+  .menu-btn_active span:after {
+    transform: rotate(35deg);
+    width: 10px;
+    transform-origin: left top;
+  }
+  .menu-block {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .menu-nav a {
+    text-decoration: none;
+    color: #f3efef;
+    text-transform: uppercase;
+    font-weight: 100;
+    display: inline-block;
+    margin-right: 20px;
+    transition: 1s;
+  }
+  .menu-nav {
+    transition: 0.2s;
+    transform: scaleX(0) translateX(0%);
+    transform-origin: right center;
+    opacity: 0;
+    visibility: hidden;
+    height: auto;
+    line-height: 50px;
+    background-color: rgb(60, 121, 174);
+    padding-right: 25px;
+    padding-left: 25px;
+    margin-right: -25px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+  }
+  .menu-nav_active {
+    transform: scaleX(1) translateX(0%);
+    opacity: 1;
+    visibility: visible;
+  }

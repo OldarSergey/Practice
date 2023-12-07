@@ -6,13 +6,11 @@ import './InfoCenter.css'
 function InfoCenter(){
     const location = useLocation();
     const [token, setToken] = useState(null);
-    const [name, setName] = useState('');
     const [selectedDate, setSelectedDate] = useState(null);
   
     useEffect(() => {
-      if (location.state && location.state.token && location.state.userName) {
+      if (location.state && location.state.token ) {
         setToken(location.state.token);
-        setName(location.state.userName);
         setSelectedDate(location.state.selectedDate || ''); 
       }
     }, [location.state]);
@@ -23,7 +21,6 @@ function InfoCenter(){
 
     return (
         <div className='ms-5'>
-          <h1 className='text-end me-5'>{name}</h1>
           <div className='d-flex'>
             <h3>Дата:</h3>
             <input

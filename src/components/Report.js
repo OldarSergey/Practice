@@ -24,7 +24,8 @@ function Report(props) {
       setUserData(response.data);
       setLoginError(null);
       props.onSuccessfulLogin();
-      navigateToInfoCenter(response.data);
+      navigateToMainPageMenu(response.data);
+      navigateToAboutCompany(response.data);
     } catch (error) {
       console.error('Error:', error);
       setUserData(null);
@@ -32,8 +33,18 @@ function Report(props) {
     }
   };
 
-  const navigateToInfoCenter = (userData) => {
-    navigate('/InfoCenter', { state: { 
+  const navigateToMainPageMenu = (userData) => {
+    const currentPath = window.location.pathname; 
+    navigate(currentPath, {
+      state: {
+        token: userData.token,
+        userName: userData.user.NameActual,
+      },
+    });
+  };
+
+  const navigateToAboutCompany = (userData) => {
+    navigate('/AboutСompany', { state: { 
       token: userData.token, 
       userName: userData.user.NameActual,
       } });

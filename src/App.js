@@ -7,6 +7,8 @@ import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import InfoCenter from './Pages/InfoCenter';
 import Image from 'react-bootstrap/Image';
+import MainPageMenu from './Pages/MainPageMenu';
+import AboutCompany from './Pages/AboutСompany';
 
 
 
@@ -34,12 +36,6 @@ function App() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           
-          <Nav id='infocenter'>
-            {isLoggedIn && (
-                <Nav.Link as={Link} to="/InfoCenter"><h4>Информационный центр</h4></Nav.Link>
-            )}
-          </Nav>
-
           <Nav className='ms-auto me-5'>
             {isLoggedIn ? (
               <Nav.Link  onClick={handleLogout}   as={Link} to="/"><h4>Выйти</h4></Nav.Link>
@@ -53,10 +49,12 @@ function App() {
           
         </Navbar.Collapse>
       </Navbar> 
-
+      <MainPageMenu></MainPageMenu>
       <Routes>
         <Route index element={<Login onShowPage={handleSuccessfulLogin}></Login>} />
         <Route path='/InfoCenter' element={<InfoCenter />} />
+        <Route path='/MainPageMenu' element={<MainPageMenu />} />
+        <Route path='/AboutСompany' element={<AboutCompany></AboutCompany>} />
       </Routes>
     </div>
   );
