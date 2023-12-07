@@ -56,7 +56,7 @@ function Login(props) {
     };
   
     return (
-      <div style={{width:'100%'}}  className="container">
+      <div style={{width:'100%', marginTop:'15px'}}  className="container">
         <form onSubmit={handleSubmit}>
           <h1 style={{textAlign:'center'}}>Вход</h1>
           <div className="ui divider"></div>
