@@ -70,10 +70,11 @@
     .menu-nav a {
       text-decoration: none;
       color: #fffffff2;
+      font-weight: bold;
       text-transform: uppercase;
       font-weight: 100;
       display: block; /* Изменено с inline-block на block */
-      font-size: 13px;
+      font-size: 14px;
       transition: 1s;
     }
     .menu-nav {
