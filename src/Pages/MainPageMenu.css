@@ -1,4 +1,10 @@
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 896px) {
+  .menu-nav a {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 837px) {
 
     .section {
       position: relative;
@@ -66,8 +72,8 @@
       text-transform: uppercase;
       font-weight: 100;
       display: block; /* Изменено с inline-block на block */
-      margin-bottom: 20px; /* Отступ между пунктами меню */
-      
+      margin-bottom: 1px; /* Отступ между пунктами меню */
+      font-size: 12px;
       transition: 1s;
     }
     .menu-nav {
@@ -102,15 +108,16 @@ body {
     position: relative;
     height: 100vh;
     display: flex;
+    top: -60px;
     justify-content: flex-end; /* Расположение вправо */
     align-items: flex-start; /* Расположение вверху */
-    padding: 30px; /* Добавление отступов по периметру */
+    padding: 2px;
   }
   .menu-btn {
     display: block;
     width: 50px;
     height: 50px;
-    background-color: #0563B4;
+    background-color: #065da9;
     border-radius: 50%;
     
     position: relative;
@@ -171,7 +178,7 @@ body {
     visibility: hidden;
     height: auto;
     line-height: 50px;
-    background-color: rgb(60, 121, 174);
+    background-color: #0563B4;
     padding-right: 25px;
     padding-left: 25px;
     margin-right: -25px;

@@ -38,7 +38,7 @@ function Report(props) {
     navigate(currentPath, {
       state: {
         token: userData.token,
-        userName: userData.user.NameActual,
+        role: userData.user.roles,
       },
     });
   };
@@ -46,7 +46,7 @@ function Report(props) {
   const navigateToAboutCompany = (userData) => {
     navigate('/AboutСompany', { state: { 
       token: userData.token, 
-      userName: userData.user.NameActual,
+      role: userData.user.roles,
       } });
   };
 

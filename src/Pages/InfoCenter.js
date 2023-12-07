@@ -20,7 +20,7 @@ function InfoCenter(){
     };
 
     return (
-        <div className='ms-5'>
+        <div className='ms-5 mt-3'>
           <div className='d-flex'>
             <h3>Дата:</h3>
             <input

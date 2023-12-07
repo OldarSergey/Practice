@@ -31,23 +31,6 @@ function App() {
         <div style={{ marginLeft:'5%'}}>
           <Image style={{width:'50px'}} src="https://www.atomexp.ru/source/pic/logo-white.svg" />
         </div>
-       
-      
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          
-          <Nav className='ms-auto me-5'>
-            {isLoggedIn ? (
-              <Nav.Link  onClick={handleLogout}   as={Link} to="/"><h4>Выйти</h4></Nav.Link>
-            ) : (
-              <Nav.Link as={Link}  to="/" ><h4>Выйти</h4></Nav.Link>
-            )}
-          </Nav>
-          <Nav className='text-end'>
-              <h1>{}</h1>
-          </Nav>
-          
-        </Navbar.Collapse>
       </Navbar> 
       <MainPageMenu></MainPageMenu>
       <Routes>
