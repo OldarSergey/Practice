@@ -9,7 +9,6 @@
 
     .section {
       position: relative;
-      height: 100vh;
       display: flex;
       justify-content: flex-end; /* Расположение вправо */
       align-items: flex-start; /* Расположение вверху */
@@ -107,9 +106,7 @@ body {
   }
   .section {
     position: relative;
-    height: 100vh;
     display: flex;
-    top: -60px;
     justify-content: flex-end; /* Расположение вправо */
     align-items: flex-start; /* Расположение вверху */
     padding: 2px;

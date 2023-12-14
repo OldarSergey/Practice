@@ -1,7 +1,5 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/esm/Button';
 
 function News() {
   const [news, setNews] = useState([]);
@@ -20,6 +18,7 @@ function News() {
   const handleSearch = () => {
     const result = news.find((item) => item.id === parseInt(searchId));
     setSearchResult(result);
+    console.log('yf;fk');
   };
 
   useEffect(() => {
@@ -27,45 +26,51 @@ function News() {
   }, []);
 
   return (
-    <div style={{ textAlign: 'center', paddingTop: '50px' }}>
-      <h1>Новости</h1>
-      <div>
+    <div className="mt-5">
+      <h1 style={{ textAlign: 'center' }}>Новости</h1>
+      <div className="d-flex justify-content-center align-items-center mb-3">
         <input
           type="text"
           placeholder="Введите ID новости"
           value={searchId}
           onChange={(e) => setSearchId(e.target.value)}
-          style={ {padding: '6px'}}
+          style={{ padding: '6px', marginRight: '10px' }}
         />
-       <Button  onClick={handleSearch} variant="primary">Поиск</Button>{' '}
-      </div>
-      {searchResult && (
         <div>
+          <button onClick={handleSearch} style={{ borderRadius: '10px', padding: '10px 20px'}}type='button'>
+            Найти
+          </button>
+        </div>
+      </div>
+
+      {searchResult && (
+        <div className="mb-4">
           <h3>Результат поиска:</h3>
-          <Card style={{ boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)', padding: '10px', width: '50%', margin: 'auto' }}>
-            <Card.Body>
-              <Card.Title>{searchResult.title}</Card.Title>
-              <Card.Text>{new Date(searchResult.dateTime).toLocaleString()}</Card.Text>
-            </Card.Body>
-          </Card>
+          <ul style={{ listStyle: 'none', padding: 0 }}>
+            <li style={{ boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)', padding: '10px', marginBottom: '10px' }}>
+              <h4>{searchResult.title}</h4>
+              <p>{new Date(searchResult.dateTime).toLocaleString()}</p>
+            </li>
+          </ul>
         </div>
       )}
-      <div className="row justify-content-center mt-3">
+      <ul style={{ listStyle: 'none', padding: 0 }}>
         {news.map((item) => (
-          <div
-          key={item.id}
-          className="col-8 col-md-6 col-lg-4 mb-3"
-          style={{ paddingLeft: '30px', paddingRight: '30px' }}
-        >
-          <Card style={{ boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)', padding: '10px' }}>
-            <Card.Body>
-              <Card.Title>{item.title}</Card.Title>
-              <Card.Text>{new Date(item.dateTime).toLocaleString()}</Card.Text>
-            </Card.Body>
-          </Card>
-        </div>
+          <li
+            key={item.id}
+            style={{
+              boxShadow: '0 4px 8px 0 rgba(0,0,0,0.2)',
+              padding: '10px',
+              marginBottom: '10px',
+              marginLeft: '20px',
+              marginRight: '20px',
+            }}
+          >
+            <h4>{item.title}</h4>
+            <p>{new Date(item.dateTime).toLocaleString()}</p>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }

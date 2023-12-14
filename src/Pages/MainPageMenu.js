@@ -41,7 +41,7 @@ function MainPageMenu() {
       
   return (
     <>
-        <div style={{ position: 'absolute', top: 70, right: 5, zIndex: 999 }}>
+        <div style={{ position: 'absolute', top: 1, right: 5, zIndex: 999 }}>
             <div className="section">
                 <div className={`menu-block ${menuActive ? 'menu-nav_active' : ''}`}>
                     <nav className={`menu-nav ${menuActive ? 'menu-nav_active' : ''}`}>
