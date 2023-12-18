@@ -23,9 +23,11 @@ function Report(props) {
       );
       setUserData(response.data);
       setLoginError(null);
-      props.onSuccessfulLogin();
+      const name = response.data.user.NameActual
+      props.onSuccessfulLogin(name);
       navigateToMainPageMenu(response.data);
       navigateToAboutCompany(response.data);
+
     } catch (error) {
       console.error('Error:', error);
       setUserData(null);

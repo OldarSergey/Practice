@@ -4,25 +4,28 @@ import { useLocation } from 'react-router-dom';
 import './InfoCenter.css'
 
 function InfoCenter(){
-    const location = useLocation();
-    const [token, setToken] = useState(null);
-    const [selectedDate, setSelectedDate] = useState(null);
-  
-    useEffect(() => {
-      if (location.state && location.state.token ) {
-        setToken(location.state.token);
-        setSelectedDate(location.state.selectedDate || ''); 
+  const location = useLocation();
+  const [token, setToken] = useState(localStorage.getItem('token') || null);
+  const [selectedDate, setSelectedDate] = useState('');
+
+  useEffect(() => {
+      const storedToken = localStorage.getItem('token');
+      if (storedToken) {
+          setToken(storedToken);
       }
-    }, [location.state]);
 
-    const handleDateChange = (event) => {
-        setSelectedDate(event.target.value);
-    };
+      if (location.state && location.state.selectedDate) {
+          setSelectedDate(location.state.selectedDate);
+      }
+  }, [location.state]);
 
+  const handleDateChange = (event) => {
+      setSelectedDate(event.target.value);
+  };
     return (
         <div className='ms-5 mt-3'>
           <div className='d-flex'>
-            <h3>Дата:</h3>
+            <h3>Дата: </h3>
             <input
               className='ms-2'
               type="month"

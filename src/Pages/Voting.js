@@ -2,27 +2,27 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function Notifications() {
+function Voting() {
   const [token, setToken] = useState(localStorage.getItem('token') || null);
-  const [notifications, setNotifications] = useState([]);
+  const [votings, setVotings] = useState([]);
 
   useEffect(() => {
     const storedToken = localStorage.getItem('token');
     if (storedToken) {
       setToken(storedToken);
-      fetchNotifications(storedToken);
+      fetchVotings(storedToken);
     }
   }, []);
 
-  const fetchNotifications = async (token) => {
+  const fetchVotings = async (token) => {
     try {
-      const response = await axios.get('http://176.106.132.3:9090/api/notify/', {
+      const response = await axios.get('http://176.106.132.3:9090/api/voiting/', {
         headers: {
           Authorization: `Bearer ${token}`
         }
       });
       console.log('Ответ с сервера:', response.data);
-      setNotifications(response.data);
+      setVotings(response.data);
     } catch (error) {
       console.error('Ошибка при загрузке уведомлений:', error);
     }
@@ -30,10 +30,10 @@ function Notifications() {
 
   return (
     <div>
-      <h1 className="text-center mt-5 mb-4">Уведомления</h1>
+      <h1 className="text-center mt-5 mb-4">Голосование</h1>
 
       <ul style={{ listStyle: 'none', padding: 0 }}>
-        {notifications.map((item) => (
+        {votings.map((item) => (
          <li
           key={item.id}
           style={{
@@ -45,7 +45,7 @@ function Notifications() {
           }}
         >
             <h3>{item.title}</h3>
-            <p>Дата публикации: {new Date(item.dateTime).toLocaleDateString()}</p>
+            <p>Дата публикации: {new Date(item.publishedAt).toLocaleDateString()}</p>
           </li>
         ))}
       </ul>
@@ -53,4 +53,4 @@ function Notifications() {
   );
 }
 
-export default Notifications;
+export default Voting;

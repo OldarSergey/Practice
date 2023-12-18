@@ -18,7 +18,6 @@ function News() {
   const handleSearch = () => {
     const result = news.find((item) => item.id === parseInt(searchId));
     setSearchResult(result);
-    console.log('yf;fk');
   };
 
   useEffect(() => {

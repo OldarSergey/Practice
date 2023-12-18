@@ -2,19 +2,33 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import './MainPageMenu.css';
 import { useNavigate, Link } from 'react-router-dom';
+import GetCountVoiting from '../components/GetCountVoiting';
 
-function MainPageMenu() {
+function MainPageMenu(props) {
   const [menuActive, setMenuActive] = useState(false);
   const location = useLocation();
-  const [token, setToken] = useState(null);
-  const [role, setRole] = useState(null);
-
+  const [token, setToken] = useState(localStorage.getItem('token') || null);
+  const [role, setRole] = useState(localStorage.getItem('role') || null);
+  const [updateCount, setUpdateCount] = useState(0);
   const navigate = useNavigate();
+  
 
   useEffect(() => {
+    forceUpdate();
+  }, [token]);
+
+  useEffect(() => {
+    const storedToken = localStorage.getItem('token');
+    const storedRole = localStorage.getItem('role');
+    
     if (location.state && location.state.token && location.state.role) {
       setToken(location.state.token);
-      setRole(location.state.role)
+      setRole(location.state.role);
+      localStorage.setItem('token', location.state.token);
+      localStorage.setItem('role', location.state.role);
+    } else if (storedToken && storedRole) {
+      setToken(storedToken);
+      setRole(storedRole);
     }
   }, [location.state]);
 
@@ -23,21 +37,33 @@ function MainPageMenu() {
     setMenuActive(!menuActive);
   };
 
+  const forceUpdate = () => {
+    setUpdateCount((prevCount) => prevCount + 1);
+  };
+
   const handleInfoCenter = () => {
     navigateToInfoCenter();
+  }
+
+  const handleVoting = () => {
+    navigateToVoting();
   }
 
   const navigateToInfoCenter = () => {
         navigate('/InfoCenter', { state: { token: token } });
     };
+  const navigateToVoting = () => {
+    navigate('/Voting', { state: { token: token } });
+  };
 
-    const handleLogout = () => {
-        // Удаление токена из состояния
-        setToken(null);
-        
-        // Или удаление из localStorage
-        localStorage.removeItem('token');
-      };
+  const handleLogout = () => {
+    // Удаление токена из состояния
+    setToken(null);
+    
+    // Или удаление из localStorage
+    localStorage.removeItem('token');
+    props.onClose();
+  };
       
   return (
     <>
@@ -45,11 +71,18 @@ function MainPageMenu() {
             <div className="section">
                 <div className={`menu-block ${menuActive ? 'menu-nav_active' : ''}`}>
                     <nav className={`menu-nav ${menuActive ? 'menu-nav_active' : ''}`}>
-                     <Link to={"/Canteen"}>Столовая</Link>
                      <Link to={"/News"}>Новости</Link>
-                     <Link to={"/Surveys"}>Опросы</Link>
-                     <Link to={"/Notification"}>Уведомления</Link>
-                    <Link to={"/KnowledgeBase"}>База знаний</Link>  
+                     <Link to={"/Notifications"}>Уведомления</Link>
+                     <a
+                      href='#'
+                      onClick={handleVoting}
+                      style={{ display: 'inline-block', whiteSpace: 'nowrap' }} 
+                    >
+                      Голосование 
+                      <GetCountVoiting token={token} key={updateCount} />
+                      
+                    </a>
+                    <Link to={"/FAQ"}>Вопросы</Link>  
                     {role == "DIRECTOR_VIEW" && (
                         <a href='#' onClick={handleInfoCenter}>Инфоцентр</a>
                     )}

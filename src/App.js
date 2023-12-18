@@ -1,7 +1,6 @@
 import './App.css';
 import Login from './Pages/Login';
 import {Routes, Route} from 'react-router-dom'
-import { Link} from "react-router-dom";
 import { Navbar, Nav } from 'react-bootstrap';
 import { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,9 +10,9 @@ import MainPageMenu from './Pages/MainPageMenu';
 import AboutCompany from './Pages/AboutСompany';
 import Canteen from './Pages/Canteen';
 import News from './Pages/News';
-import Surveys from './Pages/Surveys';
-import KnowledgeBase from './Pages/KnowledgeBase';
 import Notifications from './Pages/Notifications';
+import FAQ from './Pages/FAQ';
+import Voting from './Pages/Voting';
 
 
 
@@ -21,33 +20,37 @@ function App() {
   
   const [showInfoCenterLink, setShowInfoCenterLink] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [name, setName] = useState("")
 
-  const handleSuccessfulLogin = () => {
+  const handleSuccessfulLogin = (name) => {
     setShowInfoCenterLink(true);
     setIsLoggedIn(true);
-  };
+    setName(name)
+};
   const handleLogout = () => {
-    setIsLoggedIn(false);
+    setName('');
   };
 
   return (
     <div className='App' style={{ backgroundColor:'#FFFFFF', }} >
-      <Navbar expand="lg"  style={{backgroundColor:'#0563B4' }}>
-        <div style={{ marginLeft:'5%'}}>
-          <Image style={{width:'50px'}} src="https://www.atomexp.ru/source/pic/logo-white.svg" />
-        </div>
-      </Navbar> 
+      <Navbar expand="lg" style={{ backgroundColor: '#0563B4', position: 'relative' }}>
+      <div style={{ display: 'flex', alignItems: 'center', marginLeft: '5%'  }}>
+        <Image style={{ width: '50px' }} src="https://www.atomexp.ru/source/pic/logo-white.svg" />
+        <h2 style={{ marginLeft: '15px', color:'white' }}>{name}</h2>
+      </div>
+
+      </Navbar>
       <MainPageMenu></MainPageMenu>
       <Routes>
         <Route index element={<Login onShowPage={handleSuccessfulLogin}></Login>} />
-        <Route path='/InfoCenter' element={<InfoCenter />} />
-        <Route path='/MainPageMenu' element={<MainPageMenu />} />
+        <Route path='/InfoCenter' element={<InfoCenter  />} />
+        <Route path='/MainPageMenu' element={<MainPageMenu onClose={handleLogout} />} />
         <Route path='/AboutСompany' element={<AboutCompany></AboutCompany>} />
         <Route path='/Canteen'      element={<Canteen></Canteen>}/>
         <Route path='/News'         element={<News></News>} />
-        <Route path='/Surveys'      element={<Surveys></Surveys>} />
-        <Route path='/KnowledgeBase' element={<KnowledgeBase></KnowledgeBase>} />
-        <Route path='/Notification' element={<Notifications></Notifications>} />
+        <Route path='/Notifications' element={<Notifications></Notifications>} />
+        <Route path='/FAQ' element={<FAQ></FAQ>} />
+        <Route path='/Voting' element={<Voting></Voting>} />
       </Routes>
     </div>
   );
