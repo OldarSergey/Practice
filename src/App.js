@@ -19,16 +19,14 @@ import Voting from './Pages/Voting';
 function App() {
   
   const [showInfoCenterLink, setShowInfoCenterLink] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [name, setName] = useState("")
 
   const handleSuccessfulLogin = (name) => {
     setShowInfoCenterLink(true);
-    setIsLoggedIn(true);
     setName(name)
 };
   const handleLogout = () => {
-    setName('');
+    setName("");
   };
 
   return (
@@ -36,15 +34,15 @@ function App() {
       <Navbar expand="lg" style={{ backgroundColor: '#0563B4', position: 'relative' }}>
       <div style={{ display: 'flex', alignItems: 'center', marginLeft: '5%'  }}>
         <Image style={{ width: '50px' }} src="https://www.atomexp.ru/source/pic/logo-white.svg" />
-        <h2 style={{ marginLeft: '15px', color:'white' }}>{name}</h2>
+        <h2 style={{ marginLeft: '10px', color:'white' }}>{name}</h2>
       </div>
 
       </Navbar>
-      <MainPageMenu></MainPageMenu>
+      <MainPageMenu onClose={handleLogout} ></MainPageMenu>
       <Routes>
         <Route index element={<Login onShowPage={handleSuccessfulLogin}></Login>} />
         <Route path='/InfoCenter' element={<InfoCenter  />} />
-        <Route path='/MainPageMenu' element={<MainPageMenu onClose={handleLogout} />} />
+        <Route path='/MainPageMenu' element={<MainPageMenu/>} />
         <Route path='/AboutСompany' element={<AboutCompany></AboutCompany>} />
         <Route path='/Canteen'      element={<Canteen></Canteen>}/>
         <Route path='/News'         element={<News></News>} />

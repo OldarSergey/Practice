@@ -57,10 +57,7 @@ function MainPageMenu(props) {
   };
 
   const handleLogout = () => {
-    // Удаление токена из состояния
     setToken(null);
-    
-    // Или удаление из localStorage
     localStorage.removeItem('token');
     props.onClose();
   };
