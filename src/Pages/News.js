@@ -10,6 +10,7 @@ function News() {
     try {
       const response = await axios.get('http://176.106.132.3:9090/api/news/');
       setNews(response.data);
+      console.log("Ответ с сервера с запросы Новости: " , response.data)
     } catch (error) {
       console.error('Error:', error);
     }

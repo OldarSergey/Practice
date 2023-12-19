@@ -1,5 +1,6 @@
 import './App.css';
 import Login from './Pages/Login';
+import { useEffect } from 'react';
 import {Routes, Route} from 'react-router-dom'
 import { Navbar, Nav } from 'react-bootstrap';
 import { useState } from 'react';
@@ -23,10 +24,19 @@ function App() {
 
   const handleSuccessfulLogin = (name) => {
     setShowInfoCenterLink(true);
-    setName(name)
-};
+    localStorage.setItem('name', name); 
+    setName(name); 
+  };
+
+  useEffect(() => {
+    const storedName = localStorage.getItem('name');
+    if (storedName) {
+      setName(storedName);
+    }
+  }, []);
   const handleLogout = () => {
     setName("");
+    localStorage.removeItem('name');
   };
 
   return (

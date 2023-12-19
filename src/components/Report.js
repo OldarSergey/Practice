@@ -2,6 +2,7 @@ import{ useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
+import "./Report.css"
 
 
 
@@ -53,11 +54,18 @@ function Report(props) {
   };
 
   return (
-    <div>
-      <Button className='mt-4 ' onClick={handleLogin} variant="primary">Авторизоваться</Button>{' '}
-      
-      <p>{loginError}</p>
-    </div>
+    <>
+      <div>
+        <Button className='mt-4' onClick={handleLogin} variant="primary">
+          Авторизоваться
+        </Button>
+      </div>
+      <div>
+        <p>{loginError}</p>
+      </div>
+    </>
+
+  
   );
 }
 export default Report;

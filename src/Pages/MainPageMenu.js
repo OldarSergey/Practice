@@ -59,6 +59,7 @@ function MainPageMenu(props) {
   const handleLogout = () => {
     setToken(null);
     localStorage.removeItem('token');
+    localStorage.removeItem('name');
     props.onClose();
   };
       
@@ -80,9 +81,9 @@ function MainPageMenu(props) {
                       
                     </a>
                     <Link to={"/FAQ"}>Вопросы</Link>  
-                    {role == "DIRECTOR_VIEW" && (
-                        <a href='#' onClick={handleInfoCenter}>Инфоцентр</a>
-                    )}
+                    {token && role && role === "DIRECTOR_VIEW" && (
+                          <a href='#' onClick={handleInfoCenter}>Инфоцентр</a>
+                      )}
                     <Link to={"/"} onClick={handleLogout }>Выйти</Link>
                     </nav>
                     <a href="#" className={`menu-btn ${menuActive ? 'menu-btn_active' : ''}`} onClick={handleMenuClick}>

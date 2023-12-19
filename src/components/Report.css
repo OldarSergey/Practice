@@ -1,0 +1,11 @@
+.login-container {
+    position: relative;
+  }
+  
+  .login-error {
+    position: absolute;
+    bottom: -120px; /* Измените это значение, чтобы поднять или опустить текст ошибки */
+    left: 0;
+    color: red; /* Цвет текста ошибки */
+  }
+  

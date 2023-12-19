@@ -15,7 +15,7 @@ function ModalOutputFAQ(props) {
             <Card.Body>
               <Card.Title>{fileItem.title}</Card.Title>
               <Card.Text>ID: {fileItem.id}</Card.Text>
-              <Card.Text>URL: <a href={fileItem.fileURL}>Ссылка</a></Card.Text>
+              <Card.Text>URL: <a href={fileItem.fileURL}>{fileItem.fileURL}</a></Card.Text>
             </Card.Body>
           </Card>
         ))}
