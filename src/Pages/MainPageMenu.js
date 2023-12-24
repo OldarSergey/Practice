@@ -81,7 +81,7 @@ function MainPageMenu(props) {
                       
                     </a>
                     <Link to={"/FAQ"}>Вопросы</Link>  
-                    {token && role && role === "DIRECTOR_VIEW" && (
+                    {token && role && role == "DIRECTOR_VIEW" && (
                           <a href='#' onClick={handleInfoCenter}>Инфоцентр</a>
                       )}
                     <Link to={"/"} onClick={handleLogout }>Выйти</Link>
