@@ -14,14 +14,23 @@ import News from './Pages/News';
 import Notifications from './Pages/Notifications';
 import FAQ from './Pages/FAQ';
 import Voting from './Pages/Voting';
-
-
+import { ReactComponent as SettingsIcon } from './img/set.svg';
+import SettingsModal from './components/SettingsModal';
 
 function App() {
   
   const [showInfoCenterLink, setShowInfoCenterLink] = useState(false);
   const [name, setName] = useState("")
+  const [showModal, setShowModal] = useState(false);
 
+  const handleModalOpen = () => {
+    setShowModal(true);
+  };
+
+  const handleModalClose = () => {
+    setShowModal(false);
+  };
+  
   const handleSuccessfulLogin = (name) => {
     setShowInfoCenterLink(true);
     localStorage.setItem('name', name); 
@@ -40,11 +49,27 @@ function App() {
   };
 
   return (
+    
     <div className='App' style={{ backgroundColor:'#FFFFFF', }} >
       <Navbar expand="lg" style={{ backgroundColor: '#0563B4', position: 'relative' }}>
       <div style={{ display: 'flex', alignItems: 'center', marginLeft: '5%'  }}>
         <Image style={{ width: '50px' }} src="https://www.atomexp.ru/source/pic/logo-white.svg" />
-        <h2 style={{ marginLeft: '10px', color:'white' }}>{name}</h2>
+        <h2 style={{ marginLeft: '10px', color: 'white', display: 'flex', alignItems: 'center' }}>
+        {name && name !== '' && (
+        <>
+          {name}
+          <SettingsIcon
+            onClick={handleModalOpen}
+            style={{ width: '38px', marginLeft: '5px' }}
+          />
+          {showModal && (
+            <SettingsModal onClose={handleModalClose} />
+          )}
+        </>
+      )}
+      </h2>
+
+
       </div>
 
       </Navbar>
